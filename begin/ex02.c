@@ -33,8 +33,16 @@ void change_temp()
     printf("%6.1f\n", celsium);
 }
 
+void fahr_in_for()
+{
+    int fahr;
+    for (fahr=300; fahr>= 0; fahr = fahr - 20)
+    {
+        printf("%3d\t%6.1f\n",fahr, (5.0 / 9.0) * (fahr-32));
+    }
+}
+
 int main()
 {
-    temp();
-    change_temp();
+    fahr_in_for();
 }
