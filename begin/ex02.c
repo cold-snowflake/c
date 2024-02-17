@@ -1,22 +1,22 @@
 #include <stdio.h>
 
+#define LOWER  0
+#define UPPER  300
+#define STEP   20
+
 // temperature table
 
 void temp()
 {
     float fahr, celsius;
-    int lower, upper, step;
 
-    lower = 0;
-    upper = 300;
-    step = 20;
-    fahr = lower;
+    fahr = LOWER;
     printf("Temperature\n");
-    while (fahr <= upper)
+    while (fahr <= UPPER)
     {
         celsius = (5.0 / 9.0) * (fahr-32);
         printf("%3.0f\t%6.1f\n", fahr, celsius);
-        fahr += step;
+        fahr += STEP;
     }
 }
 
@@ -33,10 +33,13 @@ void change_temp()
     printf("%6.1f\n", celsium);
 }
 
+
+// revers function
+
 void fahr_in_for()
 {
     int fahr;
-    for (fahr=300; fahr>= 0; fahr = fahr - 20)
+    for (fahr=UPPER; fahr>= LOWER; fahr = fahr - STEP)
     {
         printf("%3d\t%6.1f\n",fahr, (5.0 / 9.0) * (fahr-32));
     }
