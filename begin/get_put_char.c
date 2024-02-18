@@ -49,9 +49,24 @@ void count_end_str()
         printf("This file contans %d ends of str\n", nl);
 }
 
+
+void control_space()
+{
+    int c;
+    while ((c = getchar()) != EOF)
+    {
+        if (c != ' ')
+            putchar(c);
+        else
+        {
+            putchar(c);
+            while ((c = getchar()) == ' ');
+                ;
+            ungetc(c, stdin);
+        }
+    }
+}
 int main()
 {
-    count_space();
-    count_tab();
-    count_end_str();
+    control_space();
 }
