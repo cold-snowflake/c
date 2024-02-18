@@ -66,6 +66,31 @@ void control_space()
         }
     }
 }
+
+void control_str()
+{
+    int c;
+    while ((c = getchar()) != EOF)
+    {
+        if ((c != '\t') && (c != '\b') && (c != '\\'))
+            putchar(c);
+        else if (c == 't')
+        {
+            putchar('\\');
+            putchar('t');
+        }
+        else if (c == 'b')
+        {
+            putchar('\\');
+            putchar('b');
+        }
+        else if (c == '\\')
+        {
+            putchar('\\');
+            putchar('\\');
+        }
+    }
+}
 int main()
 {
     control_space();
