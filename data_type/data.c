@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <limits.h>
  
-int 
-main ()
+ //ex 1
+
+void data_type ()
 {
   printf("Size of Char %d\n", CHAR_BIT);
   printf("Size of Char Max %d\n", CHAR_MAX);
@@ -18,6 +19,25 @@ main ()
   printf("Size of unsigned int %u\n", UINT_MAX);    
   printf("Size of unsigned short %u\n", USHRT_MAX);
  
-  return 0;
 }
 
+//ex 2
+
+int logical_operators(char s[], int lim)
+{
+    int c, i;
+    for (i=0; i<lim-1 && (c=getchar()) != '\n' && c != EOF; ++i)
+        s[i] = c;
+    if (c == '\n')
+    {
+        s[i] = c;
+        ++i;
+    }
+    s[i] = '\0';
+    return i;
+}
+
+int main()
+{
+    printf("%d", logical_operators("efuhegf", 9));
+}
