@@ -10,6 +10,8 @@ int bitcount (unsigned x)
     return b;
 }
 
+
+
 int main()
 {
     int a = 5;
